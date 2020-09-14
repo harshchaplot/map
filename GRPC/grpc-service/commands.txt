@@ -1,0 +1,31 @@
+Create new project
+
+	$ ballerina new grpc
+
+
+Create new modules
+
+	$ ballerina add client
+	$ ballerina add server
+
+
+Compile protobuf file
+
+	$ ballerina grpc --input grpc_client_streaming.proto  --output stubs
+
+
+Build Server & Client
+
+	$ ballerina build server
+	$ ballerina build client
+
+
+Run Server & Client
+
+	Terminal 1:
+		$ ballerina run target/bin/server.bal
+
+	Terminal 2:
+		$ ballerina run target/bin/client.bal
+
+
