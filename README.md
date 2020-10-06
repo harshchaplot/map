@@ -14,8 +14,8 @@
 			</li>
 			<li>In python I have implemented a basic service of note(like Google Keep). Here we can add a note and get any note by its ID. Commands:
 				<ul>
-					<li>python3 receive.py</li>
-					<li>python3 send.py</li>
+					<li>python3 server.py</li>
+					<li>python3 client.py</li>
 				</ul>
 			</li>
 		</ol>
