@@ -6,7 +6,7 @@ connection = pika.BlockingConnection(
 
 channel = connection.channel()
 
-channel.queue_declare(queue='queue')
+channel.queue_declare(queue='MYQUEUE')
 
 letters = string.ascii_lowercase
 letters += "0123456789!@#$%^&()"
@@ -42,11 +42,12 @@ def on_request(ch, method, props, body):
     print("Response sent")
     for x,y in note.items():
         print('ID: ', x, '\t', y)
-        print('_____________________________________')
+        print('_______________________________________________________________________________')
+    print('x-----------------------------------------------------------------------------x')
 
 
 channel.basic_qos(prefetch_count=1)
-channel.basic_consume(queue='queue', on_message_callback=on_request)
+channel.basic_consume(queue='MYQUEUE', on_message_callback=on_request)
 
 print("Awaiting requests")
 channel.start_consuming()
